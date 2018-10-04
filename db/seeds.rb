@@ -1,0 +1,2 @@
+Patient.create(name: "Sally Fields", date_of_birth: 10/2/2010, address_1: "234 Red Lane", city: "Nashville", state: "TN", zip_code: "60578", medication: "Advil")
+Patient.create(name: "Bo Jingles", date_of_birth: 02/23/2013, address_1: "12 West Bend Street", city: "Nashville", state: "TN", zip_code: "60578", medication: "Tyelnol, Tums")
