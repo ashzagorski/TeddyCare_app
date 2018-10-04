@@ -1,0 +1,1 @@
+json.array! @healthcare_providers, partial: 'healthcare_providers', as: :healthcare_providers

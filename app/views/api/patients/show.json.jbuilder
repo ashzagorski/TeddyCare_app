@@ -1,0 +1,1 @@
+json.partial! @patient, partial: 'patient', as: :patient

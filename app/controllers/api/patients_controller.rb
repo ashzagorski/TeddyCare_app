@@ -13,7 +13,7 @@ class Api::PatientsController < ApplicationController
                            city: params[:city],
                            state: params[:state],
                            zip_code: params[:zip_code],
-                           medications: params[:medications]
+                           medication: params[:medication]
                            )
     if @patient.save
       render 'show.json.jbuilder'
@@ -49,6 +49,6 @@ class Api::PatientsController < ApplicationController
   def destroy
     @patient = Patient.find(params[:id])
     @patient.destroy
-    render json: {message: "Product successfully destroyed."}
+    render json: {message: "Patient successfully destroyed."}
   end 
 end

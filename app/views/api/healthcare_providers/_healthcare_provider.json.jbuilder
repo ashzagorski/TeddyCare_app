@@ -1,0 +1,3 @@
+json.name healthcare_provider.name
+json.position healthcare_provider.position
+json.employee_id healthcare_provider.employee_id
