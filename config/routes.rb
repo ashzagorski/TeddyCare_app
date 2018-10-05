@@ -11,5 +11,10 @@ Rails.application.routes.draw do
     get '/healthcare_providers/:id' => 'healthcare_providers#show'
     patch '/healthcare_providers/:id' => 'healthcare_providers#update'
     delete '/healthcare_providers/:id' => 'healthcare_providers#destroy'
+
+    post '/visits' => 'visits#create'
+    get '/visits/:id' => 'visits#show'
+    patch '/visits/:id' => 'visits#update'
+    delete '/visits/:id' => 'visits#destroy'
   end 
 end

@@ -10,10 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_04_223307) do
+ActiveRecord::Schema.define(version: 2018_10_05_175621) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "documented_answers", force: :cascade do |t|
+    t.integer "visit_id"
+    t.integer "possible_answer_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "healthcare_providers", force: :cascade do |t|
     t.string "name"
@@ -33,6 +40,28 @@ ActiveRecord::Schema.define(version: 2018_10_04_223307) do
     t.string "state"
     t.string "city"
     t.string "medication"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "possible_answers", force: :cascade do |t|
+    t.integer "prompt_question_id"
+    t.integer "next_question_id"
+    t.string "choice"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "questions", force: :cascade do |t|
+    t.string "prompt"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "visits", force: :cascade do |t|
+    t.integer "healthcare_provider_id"
+    t.integer "patient_id"
+    t.datetime "visit_datetime"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

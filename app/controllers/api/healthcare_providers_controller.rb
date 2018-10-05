@@ -1,6 +1,6 @@
 class Api::HealthcareProvidersController < ApplicationController
   def index
-    @healthcare_provider = HealthcareProvider.all
+    @healthcare_providers = HealthcareProvider.all
     render 'index.json.jbuilder'
   end 
 
