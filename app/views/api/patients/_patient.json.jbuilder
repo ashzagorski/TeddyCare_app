@@ -6,3 +6,7 @@ json.city patient.city
 json.state patient.state
 json.zip_code patient.zip_code
 json.medication patient.medication
+
+json.formatted do
+  json.date_of_birth patient.friendly_date_of_birth
+end

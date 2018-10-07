@@ -7,4 +7,7 @@ class Patient < ApplicationRecord
   validates :date_of_birth, presence: true
   validates :address_1, presence: true
   
+  def friendly_date_of_birth
+      date_of_birth.strftime("%B %e, %Y")
+  end 
 end

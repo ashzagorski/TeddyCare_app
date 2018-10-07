@@ -16,5 +16,9 @@ Rails.application.routes.draw do
     get '/visits/:id' => 'visits#show'
     patch '/visits/:id' => 'visits#update'
     delete '/visits/:id' => 'visits#destroy'
+
+    get 'questions/:id' => 'questions#show'
+
+    post "/sessions" => "sessions#create"
   end 
 end

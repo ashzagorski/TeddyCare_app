@@ -1,7 +1,12 @@
 class Api::PatientsController < ApplicationController
+  before_action :authenticate_admin
+
   def index
-    @patients = Patient.all
-    render 'index.json.jbuilder'
+    if current_user
+      @patients = current_user.patients
+      render 'index.json.jbuilder'
+    else
+      render json: []
   end 
 
   def create

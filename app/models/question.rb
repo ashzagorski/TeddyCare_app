@@ -1,5 +1,5 @@
 class Question < ApplicationRecord
-  belongs_to :possible_answer
+  has_many :possible_answers, foreign_key: "prompt_question_id"
 
   validates :prompt, presence: true
 end

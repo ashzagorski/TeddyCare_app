@@ -1,4 +1,6 @@
 class Api::HealthcareProvidersController < ApplicationController
+  # before_action :authenticate_admin
+  
   def index
     @healthcare_providers = HealthcareProvider.all
     render 'index.json.jbuilder'
@@ -16,7 +18,7 @@ class Api::HealthcareProvidersController < ApplicationController
      if @healthcare_provider.save
       render 'show.json.jbuilder'
     else 
-      render json: {errors: @healthcare_provider.errors.full_messages}, status: :unprocessable_entity
+      render json: {errors: @healthcare_provider.errors.full_messages}, status: :bad_request
     end
   end
 
