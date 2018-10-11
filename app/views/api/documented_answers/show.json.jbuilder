@@ -1,0 +1,1 @@
+json.partial! @documented_answer, partial: 'documented_answer', as: :documented_answer

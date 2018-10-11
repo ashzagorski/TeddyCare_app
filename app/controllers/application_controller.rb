@@ -21,9 +21,15 @@ class ApplicationController < ActionController::Base
 
   helper_method :current_healthcare_provider
 
-  # def authenticate_admin
-  #   unless current_healthcare_provider && current_healthcare_provider.admin 
-  #     render json: {}, status: :unauthorized
-  #   end 
-  # end 
+def authenticate_user
+    unless current_healthcare_provider
+      render json: {}, status: :unauthorized
+    end  
+  end 
+
+  def authenticate_admin
+    unless current_healthcare_provider && current_healthcare_provider.admin 
+      render json: {}, status: :unauthorized
+    end 
+  end
 end

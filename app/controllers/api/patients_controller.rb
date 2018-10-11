@@ -1,12 +1,15 @@
 class Api::PatientsController < ApplicationController
-  before_action :authenticate_admin
+  # before_action :authenticate_healthcare_provider
 
   def index
-    if current_user
-      @patients = current_user.patients
-      render 'index.json.jbuilder'
+    
+    if current_healthcare_provider    
+        @patients = current_healthcare_provider.patients
+        render 'index.json.jbuilder'
     else
       render json: []
+    end
+    
   end 
 
   def create

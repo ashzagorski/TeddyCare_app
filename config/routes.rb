@@ -12,6 +12,7 @@ Rails.application.routes.draw do
     patch '/healthcare_providers/:id' => 'healthcare_providers#update'
     delete '/healthcare_providers/:id' => 'healthcare_providers#destroy'
 
+    get '/visits' => 'visits#index'
     post '/visits' => 'visits#create'
     get '/visits/:id' => 'visits#show'
     patch '/visits/:id' => 'visits#update'
@@ -20,5 +21,8 @@ Rails.application.routes.draw do
     get 'questions/:id' => 'questions#show'
 
     post "/sessions" => "sessions#create"
+
+    post '/documented_answers' => 'documented_answers#create'
+    get 'documented_answers/:id' => 'documented_answers#show'
   end 
 end
