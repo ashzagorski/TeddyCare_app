@@ -8,5 +8,6 @@ class Visit < ApplicationRecord
   def friendly_visit_datetime
     visit_datetime.strftime("%A, %B %e %Y, %m %M %p")
   end 
+  
 
 end

@@ -10,4 +10,6 @@ class Patient < ApplicationRecord
   def friendly_date_of_birth
       date_of_birth.strftime("%B %e, %Y")
   end 
+
+  
 end

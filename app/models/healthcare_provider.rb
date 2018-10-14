@@ -14,4 +14,6 @@ class HealthcareProvider < ApplicationRecord
 
 
   enum position: {Nurse: 0, Doctor: 1, Surgeon: 2, Therapist: 3}
+
+  
 end

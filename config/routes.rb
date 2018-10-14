@@ -18,11 +18,13 @@ Rails.application.routes.draw do
     patch '/visits/:id' => 'visits#update'
     delete '/visits/:id' => 'visits#destroy'
 
+    get 'questions' => 'questions#index'
     get 'questions/:id' => 'questions#show'
 
     post "/sessions" => "sessions#create"
 
+    get '/documented_answers' => 'documented_answers#index'
     post '/documented_answers' => 'documented_answers#create'
-    get 'documented_answers/:id' => 'documented_answers#show'
+    
   end 
 end

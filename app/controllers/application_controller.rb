@@ -12,7 +12,7 @@ class ApplicationController < ActionController::Base
           true,
           { algorithm: 'HS256' }
         )
-        HealthcareProvider.find_by(id: decoded_token[0]["healthcare_provider_id"])
+        @current_healthcare_provider = HealthcareProvider.find_by(id: decoded_token[0]["healthcare_provider_id"])
       rescue JWT::ExpiredSignature
         nil
       end
@@ -32,4 +32,5 @@ def authenticate_user
       render json: {}, status: :unauthorized
     end 
   end
+
 end
