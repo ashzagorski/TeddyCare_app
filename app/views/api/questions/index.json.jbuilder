@@ -1,1 +1,1 @@
-json.array! @questions partial: 'question', as: :question
+json.array! @questions, partial: 'question', as: :question

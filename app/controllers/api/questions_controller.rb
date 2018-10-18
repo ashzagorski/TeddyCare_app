@@ -1,7 +1,7 @@
 class Api::QuestionsController < ApplicationController
   
   def index
-    @questions = Questions.all
+    @questions = Question.all
     render 'index.json.jbuilder'
   end 
 
@@ -10,7 +10,11 @@ class Api::QuestionsController < ApplicationController
   end
 
   def show
-    @question = Question.find(params[:id])
-    render 'show.json.jbuilder'
+    
+     if @question = Question.find(params[:id])
+      render 'show.json.jbuilder'
+    else
+      redirect_to "http://localhost:3000/api/patients/1"
+    end
   end 
 end

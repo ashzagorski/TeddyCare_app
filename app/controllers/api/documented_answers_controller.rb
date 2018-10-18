@@ -11,11 +11,12 @@ class Api::DocumentedAnswersController < ApplicationController
                                               possible_answer_id: params[:possible_answer_id]
                                               )
 
-    answer = @documented_answer.possible_answer
-    next_question = answer.next_question
     
     if @documented_answer.save
-        redirect_to "http://localhost:3000/api/questions/#{next_question.id}"
+      answer = @documented_answer.possible_answer
+      next_question_id = answer.next_question_id
+      
+      redirect_to "http://localhost:3000/api/questions/#{next_question_id}"
     else 
         render json: {message: "Please Select Possible Answer."}
     end
