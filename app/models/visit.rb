@@ -6,8 +6,10 @@ class Visit < ApplicationRecord
   validates :visit_datetime, presence: true
 
   def friendly_visit_datetime
-    visit_datetime.strftime("%A, %B %e %Y, %m %M %p")
+    visit_datetime.strftime("%A, %B %e %Y, %m:%M %p")
   end 
   
+
+
 
 end

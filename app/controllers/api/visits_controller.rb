@@ -20,6 +20,12 @@ class Api::VisitsController < ApplicationController
 
   def show
     @visit = Visit.find(params[:id])
+
+    # @visit.documented_answers.includes(:possible_answer, :prompt_question)
+
+    @patient_name = Patient.find(@visit.patient_id).name
+
+
     render 'show.json.jbuilder'
   end 
 
