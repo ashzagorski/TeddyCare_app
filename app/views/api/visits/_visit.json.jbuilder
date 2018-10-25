@@ -3,6 +3,7 @@ json.patient_id visit.patient_id
 json.patient_name visit.patient.name
 
 
+
 json.formatted do
   json.visit_datetime visit.friendly_visit_datetime
 end
@@ -11,6 +12,11 @@ end
 json.documented_answer do
   json.partial! visit.documented_answers, partial: 'api/documented_answers/documented_answer', as: :documented_answer
 end
+
+if visit.todays_visit?
+  json.todays_visit "Scheduled Today"
+end 
+
 
 
 

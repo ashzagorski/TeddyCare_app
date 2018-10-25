@@ -1,4 +1,5 @@
 class Api::VisitsController < ApplicationController
+  # before_action :authenticate_user
   
   def index
     @visits = Visit.all
@@ -22,8 +23,6 @@ class Api::VisitsController < ApplicationController
     @visit = Visit.find(params[:id])
 
     # @visit.documented_answers.includes(:possible_answer, :prompt_question)
-
-    @patient_name = Patient.find(@visit.patient_id).name
 
 
     render 'show.json.jbuilder'

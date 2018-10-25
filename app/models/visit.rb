@@ -9,7 +9,8 @@ class Visit < ApplicationRecord
     visit_datetime.strftime("%A, %B %e %Y, %m:%M %p")
   end 
   
-
-
-
+  def todays_visit?
+    if visit_datetime.strftime("%A, %B %e %Y") == Time.now.strftime("%A, %B %e %Y")
+    end
+  end
 end

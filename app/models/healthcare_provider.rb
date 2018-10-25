@@ -15,5 +15,7 @@ class HealthcareProvider < ApplicationRecord
 
   enum position: {Nurse: 0, Doctor: 1, Surgeon: 2, Therapist: 3}
 
-  
+  def todays_visits
+    visits.where(visit_datetime: Time.zone.now.beginning_of_day..Time.zone.now.end_of_day)
+  end
 end
