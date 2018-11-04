@@ -15,4 +15,3 @@ end
 json.visit do 
   json.array! patient.visits, partial: 'api/visits/visit', as: :visit
 end
-

@@ -1,5 +1,5 @@
 json.prompt question.prompt
-json.possible_answer question.possible_answers
+json.possible_answers question.possible_answers
 
 
 

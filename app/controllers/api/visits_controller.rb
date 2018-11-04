@@ -21,7 +21,7 @@ class Api::VisitsController < ApplicationController
 
   def show
     @visit = Visit.find(params[:id])
-
+    @patient = Patient.find(@visit.patient_id)
     # @visit.documented_answers.includes(:possible_answer, :prompt_question)
 
 
