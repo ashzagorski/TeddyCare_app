@@ -1,4 +1,6 @@
 class Api::DocumentedAnswersController < ApplicationController
+    before_action :authenticate_healthcare_provider
+
   def index
     @documented_answers = DocumentedAnswer.all
     render 'index.json.jbuilder'
@@ -16,11 +18,17 @@ class Api::DocumentedAnswersController < ApplicationController
       answer = @documented_answer.possible_answer
       next_question_id = answer.next_question_id
       
-      redirect_to "http://localhost:3000/api/questions/#{next_question_id}"
+      render json: {message: "it worked"}
     else 
-        render json: {message: "Please Select Possible Answer."}
+        render json: {message: "Please Select Possible Answer."}, status: :bad_request
     end
         
+  end 
+
+  def show
+    @documented_answer = DocumentedAnswer.find(params[:id]
+      )
+    render 'show.json.jbuilder'
   end 
 
   def destroy

@@ -1,5 +1,5 @@
 class Api::PatientsController < ApplicationController
-  # before_action :authenticate_healthcare_provider
+  before_action :authenticate_healthcare_provider
 
   def index
     

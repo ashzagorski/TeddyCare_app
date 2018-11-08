@@ -1,3 +1,4 @@
+json.id visit.id
 json.visit_datetime visit.visit_datetime
 
 json.patient do 

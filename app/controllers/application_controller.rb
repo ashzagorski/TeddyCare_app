@@ -21,7 +21,7 @@ class ApplicationController < ActionController::Base
 
   helper_method :current_healthcare_provider
 
-def authenticate_user
+def authenticate_healthcare_provider
     unless current_healthcare_provider
       render json: {}, status: :unauthorized
     end  

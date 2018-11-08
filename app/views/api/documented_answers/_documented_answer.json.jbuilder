@@ -1,3 +1,4 @@
+json.id documented_answer.id
 json.visit_id documented_answer.visit_id
 json.possible_answer_id documented_answer.possible_answer_id
 

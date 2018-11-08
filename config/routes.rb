@@ -23,8 +23,14 @@ Rails.application.routes.draw do
 
     post "/sessions" => "sessions#create"
 
+
     get '/documented_answers' => 'documented_answers#index'
     post '/documented_answers' => 'documented_answers#create'
+     get '/documented_answers/:id' => 'documented_answers#show'
+    patch '/documented_answers/:id' => 'documented_answers#update'
+    delete '/documented_answers/:id' => 'documented_answers#destroy'
     
   end 
+
+  post '/', to: 'alexa#index'
 end

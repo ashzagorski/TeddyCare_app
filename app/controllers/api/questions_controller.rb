@@ -1,5 +1,6 @@
 class Api::QuestionsController < ApplicationController
-  
+    before_action :authenticate_healthcare_provider
+
   def index
     @questions = Question.all
     render 'index.json.jbuilder'
