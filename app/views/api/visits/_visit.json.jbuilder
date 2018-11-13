@@ -11,10 +11,12 @@ json.patient do
   json.state visit.patient.state
   json.zip_code visit.patient.zip_code
   json.medication visit.patient.medication
+  json.image visit.patient.image
 end
 
 json.formatted do
   json.visit_datetime visit.friendly_visit_datetime
+  json.time visit.friendly_time
 end
 
 json.documented_answers do

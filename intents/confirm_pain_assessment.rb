@@ -5,55 +5,56 @@ intent "ConfirmPainAssessment" do
   rate = request.slot_value("rate")
   visit_id = request.session_attribute("visit_id")
 
-  if response == "yes" || "mhmmm" || "yeah" || "yay"
+  if response == "yes" 
     card_title = "Danny does have pain."
   else 
     card_title = "Danny has no pain."
   end
+
   card_body = "Danny has pain in her #{ part} for #{length} with a rating of #{rate}"
 
-  if response == "yes" || "mhmmm" || "yeah" || "yay"
+  if response == "yes" 
     response = 1
   else 
     response = 2
   end
 
-  if part == "head" || "forehead"
+  if part == 'head'
     part = 3
-  elsif part == "back"
+  elsif part == 'back'
     part = 4
-  elsif part == 'stomach' || 'belly'
+  elsif part == 'stomach' 
     part = 5
-  elsif part == 'arm' || 'hand' || 'elbow' || 'shoulder'
+  elsif part == 'arm' 
     part = 13
-  else part == 'leg' || 'knee' || 'foot' || 'hip'
+  else part == 'leg'
     part = 14
   end
 
   if length == 'today'
     length = 6
-  elsif length == 'a week or less' || 'one week' || 'yesterday'
+  elsif length == 'a week ago or less' 
     length = 7
-  elsif length == 'a month or less' || 'month' || 'last week'
+  elsif length == 'a month ago or less'
     length = 15
-  elsif length == 'six months or less' || 'a few months'
+  elsif length == 'six months ago or less' 
     length = 16
-  elsif length == 'one year or less' || 'a year' || 'one year'
+  elsif length == 'one year ago or less'
     length = 18 
   else length == 'over one year'
     length = 17
       
   end 
 
-  if rate == "one"
+  if rate == '1' 
     rate = 8
-  elsif rate == "two"
+  elsif rate == '2' 
     rate = 9
-  elsif rate == "three"
+  elsif rate == '3' 
     rate = 10
-  elsif rate == "four"
+  elsif rate == '4'
     rate = 11
-  else rate == "five"
+  else rate == '5' 
     rate = 12
   end
       
@@ -85,5 +86,5 @@ intent "ConfirmPainAssessment" do
       
   assessment_card = card(card_title, card_body)
 
-  tell("<speak><voice name='Ivy'> <prosody pitch='high'>It was great talking with you Sally! If you need anything else don't hesitate to ask We will do everything we can to help reduce your pain.</prosody></voice></speak>", ssml: true, card: assessment_card)
+  tell("<speak><voice name='Ivy'> <prosody pitch='high'>It was great talking with you Sally! If you need anything else don't hesitate to ask. We will do everything we can to help reduce your pain.</prosody></voice></speak>", ssml: true, card: assessment_card)
 end
