@@ -1,3 +1,6 @@
+require './lib/name'
+require 'active_support/core_ext/array/conversions'
+
 intent "ConfirmPainAssessment" do
   response = request.session_attribute('response')
   part = request.session_attribute('part')
@@ -33,13 +36,13 @@ intent "ConfirmPainAssessment" do
 
   if length == 'today'
     length = 6
-  elsif length == 'a week ago or less' 
+  elsif length == 'a week ago' 
     length = 7
-  elsif length == 'a month ago or less'
+  elsif length == 'a month ago'
     length = 15
-  elsif length == 'six months ago or less' 
+  elsif length == 'six months ago' 
     length = 16
-  elsif length == 'one year ago or less'
+  elsif length == 'one year ago'
     length = 18 
   else length == 'over one year'
     length = 17
@@ -86,5 +89,5 @@ intent "ConfirmPainAssessment" do
       
   assessment_card = card(card_title, card_body)
 
-  tell("<speak><voice name='Ivy'> <prosody pitch='high'>It was great talking with you Sally! If you need anything else don't hesitate to ask. We will do everything we can to help reduce your pain.</prosody></voice></speak>", ssml: true, card: assessment_card)
+  tell("<speak><voice name='Ivy'> <prosody pitch='high'>It was great talking with you #{ Name::NAME}! If you need anything else don't hesitate to ask. We will do everything we can to help reduce your pain.</prosody></voice></speak>", ssml: true, card: assessment_card)
 end

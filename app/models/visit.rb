@@ -12,6 +12,10 @@ class Visit < ApplicationRecord
   def friendly_time
     visit_datetime.strftime("%l: %M %p")
   end
+
+  def friendly_date
+    visit_datetime.strftime("%m/%d/%Y")
+  end
   
   def todays_visit?
     if visit_datetime.strftime("%A, %B %e %Y") == Time.now.strftime("%A, %B %e %Y")

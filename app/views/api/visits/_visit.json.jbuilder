@@ -17,6 +17,7 @@ end
 json.formatted do
   json.visit_datetime visit.friendly_visit_datetime
   json.time visit.friendly_time
+  json.date visit.friendly_date
 end
 
 json.documented_answers do

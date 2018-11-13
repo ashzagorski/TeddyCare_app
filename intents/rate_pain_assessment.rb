@@ -1,3 +1,7 @@
+require './lib/name'
+require 'active_support/core_ext/array/conversions'
+
+
 intent "RatePainAssessment" do 
   response = request.session_attribute('response')
   part = request.session_attribute('part')
