@@ -8,19 +8,6 @@ intent "ConfirmPainAssessment" do
   rate = request.slot_value("rate")
   visit_id = request.session_attribute("visit_id")
 
-  if response == "yes" 
-    card_title = "Danny does have pain."
-  else 
-    card_title = "Danny has no pain."
-  end
-
-  card_body = "Danny has pain in her #{ part} for #{length} with a rating of #{rate}"
-
-  if response == "yes" 
-    response = 1
-  else 
-    response = 2
-  end
 
   if part == 'head'
     part = 3

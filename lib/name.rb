@@ -1,3 +1,3 @@
 class Name
-  NAME = ["lisa"]
+  NAME = ["bo"]
 end
